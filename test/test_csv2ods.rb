@@ -1,16 +1,12 @@
-require 'minitest/autorun'
-require 'simplecov'
-
-SimpleCov.start
-SimpleCov.minimum_coverage 85
-
+require_relative 'test_helper'
 require './lib/csv2ods.rb'
 
-class TESTER < Minitest::Test
+class TestCSV2ODS < Minitest::Test
 
  def test_archivo_existente
       var1='testeo.zip', var2="salida"
       prueba = CSV_TO_ODS.new("testeo.zip", var2)
+      puts "done"
       assert prueba.crear() != nil
  end
 
